@@ -6,6 +6,8 @@ description: How to Train models using Deep Lake and PyTorch Lightning
 
 ## How to Train models using Deep Lake and PyTorch Lightning
 
+**This tutorial is also available as a** [**Colab Notebook**](https://colab.research.google.com/drive/1oHUNH4HpZ5zvqUe2Njt4l1J\_JV7FPLtW?usp=sharing)**.**
+
 Deep Lake's integration with PyTorch can also be used to train models using an integration with [PyTorch Lightning](https://www.pytorchlightning.ai/), a popular open-source high-level interface for PyTorch.&#x20;
 
 ### Overview
@@ -18,7 +20,7 @@ Deep Lake's integration with PyTorch can also be used to train models using an i
 
 ### Example Code
 
-This tutorial uses PyTorch Lightning to execute the [identical training workflow that is shown here in PyTorch](training-an-image-classification-model-in-pytorch.md). **It is also available as a** [**Colab Notebook**](https://colab.research.google.com/drive/1oHUNH4HpZ5zvqUe2Njt4l1J\_JV7FPLtW?usp=sharing)**.**
+This tutorial uses PyTorch Lightning to execute the [identical training workflow that is shown here in PyTorch](training-an-image-classification-model-in-pytorch.md).
 
 ### Data Preprocessing
 
