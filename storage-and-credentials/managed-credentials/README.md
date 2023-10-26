@@ -25,15 +25,17 @@ In order for the Deep Lake to access datasets or linked tensors stored in the us
 
 ### Default Storage
 
-Default storage enables you to map the Deep Lake path `hub://org_id/dataset_name`to a cloud path of your choice. Subsequently, all datasets created using the Deep Lake path will be stored at the location you specified. By default, the default storage is set as Activeloop Storage. You may change the default storage using the UI below.
+Default storage enables you to map the Deep Lake path `hub://org_id/dataset_name`to a cloud path of your choice. Subsequently, all datasets created using the Deep Lake path will be stored at the user-specified specified, and they can be accessed using API tokens and managed credentials from Deep Lake. By default, the default storage is set as Activeloop Storage, and you may change it using the UI below.
 
 {% embed url="https://www.loom.com/share/962f130397b344cbbfe9168519f22691" %}
 
-### Connecting Deep Lake Datasets to the App
+{% hint style="warning" %}
+Note: that in order to visualize data in the Deep Lake browser application, it is necessary to [enable CORS](amazon-web-services/enabling-cors.md) in the bucket containing any source data.
+{% endhint %}
 
-Datasets in Deep Lake storage are automatically connected to the [Deep Lake App](https://app.activeloop.ai/). Datasets in user's clouds can be connected to the App using the Python API below. Note that **in order to visualize data in the Deep Lake browser application, it is necessary to** [**enable CORS**](amazon-web-services/enabling-cors.md) **in the bucket containing any source data.**
+### Connecting Deep Lake Dataset in your Cloud to the Deep Lake to App
 
-Once a dataset is connected to Deep Lake, it is assigned a Deep Lake path `hub://org_id/dataset_name`, and it can be accessed using API tokens and managed credentials from Deep Lake, without continuously having to specify cloud credentials.
+If you do not set the Default Storage as your own cloud, Datasets in user's clouds can be connected to the [Deep Lake App](https://app.activeloop.ai/) using the Python API below. Once a dataset is connected to Deep Lake, it is assigned a Deep Lake path `hub://org_id/dataset_name`, and it can be accessed using API tokens and managed credentials from Deep Lake, without continuously having to specify cloud credentials.
 
 #### **Connecting Datasets in the Python API**
 
