@@ -23,6 +23,12 @@ In order for the Deep Lake to access datasets or linked tensors stored in the us
 
 <figure><img src="../../.gitbook/assets/Authentication_With_Managed_Creds.png" alt=""><figcaption><p>Authentication Using Managed Credentials</p></figcaption></figure>
 
+### Default Storage
+
+Default storage enables you to map the Deep Lake path `hub://org_id/dataset_name`to a cloud path of your choice. Subsequently, all datasets created using the Deep Lake path will be stored at the location you specified. By default, the default storage is set as Activeloop Storage. You may change the default storage using the UI below.
+
+{% embed url="https://www.loom.com/share/962f130397b344cbbfe9168519f22691" %}
+
 ### Connecting Deep Lake Datasets to the App
 
 Datasets in Deep Lake storage are automatically connected to the [Deep Lake App](https://app.activeloop.ai/). Datasets in user's clouds can be connected to the App using the Python API below. Note that **in order to visualize data in the Deep Lake browser application, it is necessary to** [**enable CORS**](amazon-web-services/enabling-cors.md) **in the bucket containing any source data.**
@@ -49,12 +55,6 @@ Specifying `org_id` creates the dataset in the specified org using the `dataset_
 
 Specifying the `dest_path` creates the dataset at the `org_id` and `dataset_name` from the specified path.&#x20;
 {% endhint %}
-
-### Default Storage
-
-By default, any dataset created using the Deep Lake path `hub://org_id/dataset_name`, is stored in Activeloop storage. You may change the default storage location for Deep Lake paths to a location of your choice using the UI below. Subsequently, all datasets created using the Deep Lake path will be stored at the specified location.&#x20;
-
-{% embed url="https://www.loom.com/share/962f130397b344cbbfe9168519f22691" %}
 
 ### Using Manage Credentials with Linked Tensors
 
