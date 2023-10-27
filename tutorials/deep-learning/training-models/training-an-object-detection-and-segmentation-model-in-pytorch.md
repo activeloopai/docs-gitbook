@@ -48,6 +48,10 @@ num_classes = len(ds_train.categories.info.class_names)
 
 For complex dataset like this one, it's critical to carefully define the pre-processing function that returns the torch tensors that are use for training. Here we use an [Albumentations](https://github.com/albumentations-team/albumentations) augmentation pipeline combined with additional pre-processing steps that are necessary for this particular model.
 
+{% hint style="danger" %}
+**Note:** This tutorial assumes that the number of masks and bounding boxes for each image is equal
+{% endhint %}
+
 ```python
 # Augmentation pipeline using Albumentations
 tform_train = A.Compose([
@@ -58,7 +62,7 @@ tform_train = A.Compose([
 ], bbox_params=A.BboxParams(format='pascal_voc', label_fields=['class_labels', 'bbox_ids'], min_area=25, min_visibility=0.6)) # 'label_fields' and 'box_ids' are all the fields that will be cut when a bounding box is cut.
 
 
-# Transformation function for pre-processing the deeplake sample before sending it to the model
+# Transformation function for pre-processing the Deep Lake sample before sending it to the model
 def transform(sample_in):
 
     # Convert boxes to Pascal VOC format
@@ -71,12 +75,25 @@ def transform(sample_in):
 
     # Pass all data to the Albumentations transformation
     # Mask must be converted to a list
-    transformed = tform_train(image = images, 
-                              masks = [sample_in['masks'][:,:,i].astype(np.uint8) for i in range(sample_in['masks'].shape[2])],
-                              bboxes = boxes, 
-                              bbox_ids = np.arange(boxes.shape[0]),
-                              class_labels = sample_in['categories'],
-                              )
+    masks = sample_in['masks']
+    mask_shape = masks.shape
+
+    # This if-else statement was not necessary in Albumentations <1.3.x, because the empty mask scenario was handled gracefully inside of Albumentations. In Albumebtations >1.3.x, empty list of masks fails
+    if mask_shape[2]>0:
+        transformed = tform_train(image = images,
+                                  masks = [masks[:,:,i].astype(np.uint8) for i in range(mask_shape[2])],
+                                  bboxes = boxes,
+                                  bbox_ids = np.arange(boxes.shape[0]),
+                                  class_labels = sample_in['categories'],
+                                  )
+    else:
+        transformed = tform_train(image = images,
+                                  bboxes = boxes,
+                                  bbox_ids = np.arange(boxes.shape[0]),
+                                  class_labels = sample_in['categories'],
+                                  )  
+        
+
 
     # Convert boxes and labels from lists to torch tensors, because Albumentations does not do that automatically.
     # Be very careful with rounding and casting to integers, becuase that can create bounding boxes with invalid dimensions
