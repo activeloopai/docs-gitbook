@@ -112,8 +112,8 @@ UDFs are only supported with query execution using the Python engine, so in the 
 Instead of using UDFs, a filter can be specified using dictionary syntax. For json tensors, the syntax is `filter = {"tensor_name": {"key": "value"}}`. For text tensors, it is `filter = {"tensor": "value"}`. In all cases, an exact match is performed.
 
 ```python
-search_results_filter = self.txt_vector_store.search(embedding_data = "", 
-                                            embedding_function = self.embedding_text_function,
+search_results_filter = vector_store.search(embedding_data = prompt, 
+                                            embedding_function = embedding_function,
                                             filter = {"metadata": {"source": "paul_graham_essay.txt"}})
 ```
 
