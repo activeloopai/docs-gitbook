@@ -66,7 +66,7 @@ vectorstore = VectorStore(
 
 #### Adding data to the Vector Store <a href="#adding-data-to-the-vector-store" id="adding-data-to-the-vector-store"></a>
 
-Next, let's extract the data from the SciFact dataset and add it to our Vector Store. In this example, we embed the abstracts of the scientific papers. Normally, the `id` tensor is auto-populated, but in this case, we want to use the ids in the SciFact dataset, in order to
+Next, let's extract the data from the SciFact dataset and add it to our Vector Store. In this example, we embed the abstracts of the scientific papers. Normally, the `id` tensor is auto-populated, but in this case, we want to use the ids in the SciFact dataset, in order to use the internal connection between ids, abstracts, and claims, that already exists in SciFact.
 
 ```python
 ids = [f"{id_}" for id_ in corpus["train"]["doc_id"]]
