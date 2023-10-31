@@ -6,6 +6,8 @@ description: Using Deep Memory to improve the accuracy of your Vector Search
 
 ## How to Use Deep Memory to Improve the Accuracy of your Vector Search <a href="#how-to-use-deep-memory-to-improve-the-accuracy-of-your-vector-search" id="how-to-use-deep-memory-to-improve-the-accuracy-of-your-vector-search"></a>
 
+#### This tutorial is also available as a [Colab Notebook](https://colab.research.google.com/drive/1Hu6lkVwXPdLvWXwQIcFTs8OxKQgYzmJp?usp=sharing)
+
 [Deep Memory](../../performance-features/deep-memory/) computes a transformation that converts your embeddings into an embedding space that is tailored for your use case, based on several examples for which the most relevant embedding is known. This can increase the accuracy of your Vector Search by up to 22%.
 
 **In this example, we'll use Deep Memory to improve the accuracy of Vector Search on the SciFact dataset, where the input prompt is a scientific claim, and the search result is the corresponding abstract.**
