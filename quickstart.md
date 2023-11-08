@@ -59,7 +59,7 @@ def embedding_function(texts, model="text-embedding-ada-002"):
        texts = [texts]
 
    texts = [t.replace("\n", " ") for t in texts]
-   return [data['embedding']for data in openai.Embedding.create(input = texts, model=model)['data']]
+   return [data.embedding for data in openai.embeddings.create(input = texts, model=model).data]
 ```
 
 Finally, let's create the Deep Lake Vector Store and populate it with data. We use a default tensor configuration, which creates tensors with `text (str)`, `metadata(json)`, `id (str, auto-populated)`, `embedding (float32)`. [Learn more about tensor customizability here.](getting-started/vector-store/step-4-customizing-vector-stores.md)&#x20;
