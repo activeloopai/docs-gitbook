@@ -59,6 +59,7 @@ def embedding_function(texts, model="text-embedding-ada-002"):
        texts = [texts]
 
    texts = [t.replace("\n", " ") for t in texts]
+   
    return [data.embedding for data in openai.embeddings.create(input = texts, model=model).data]
 ```
 
