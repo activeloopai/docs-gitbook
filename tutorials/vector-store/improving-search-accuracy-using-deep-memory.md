@@ -72,7 +72,7 @@ Next, let's extract the data from the SciFact dataset and add it to our Vector S
 
 ```python
 ids = [f"{id_}" for id_ in corpus["train"]["doc_id"]]
-texts = [text[0] for text in corpus["train"]["abstract"]]
+texts = [' '.join(text) for text in corpus["train"]["abstract"]]
 metadata = [{"title": title} for title in corpus["train"]["title"]]
 ```
 
@@ -97,17 +97,17 @@ def preprocess_scifact(claims_dataset, dataset_type="train"):
     claims_dict = {}
 
     for item in claims_dataset[dataset_type]:
-        claim = item['claim']
-        relevance = (item['evidence_doc_id'], 1)  # 1 indicates that the evidence is relevant to the question
+        claim = item['claim']  # Assuming 'claim' is the field for the question
+        relevance = item['cited_doc_ids']  # Assuming 'cited_doc_ids' is the field for relevance
+        relevance = [(str(r), 1) for r in relevance]
 
         # Check for non-empty relevance
-        if relevance[0] != "":
-            if claim not in claims_dict:
-                claims_dict[claim] = [relevance]
-            else:
-                # If the does not exist in the dictionary, append the new relevance
-                if relevance not in claims_dict[claim]:
-                    claims_dict[claim].append(relevance)
+        if claim not in claims_dict:
+            claims_dict[claim] = relevance
+        else:
+            # If the does not exist in the dictionary, append the new relevance
+            if relevance not in claims_dict[claim]:
+                claims_dict[claim].extend(relevance)
 
     # Split the dictionary into two lists: claims and relevances
     claims = list(claims_dict.keys())
@@ -144,16 +144,16 @@ relevances[:10]
 ```
 
 ```
-[[('13734012', 1)],
+[[('31715818', 1)],
+ [('13734012', 1)],
+ [('22942787', 1)],
+ [('2613775', 1)],
  [('44265107', 1)],
- [('33409100', 1)],
- [('6490571', 1)],
- [('12670680', 1)],
- [('24341590', 1)],
- [('12428497', 1)],
- [('11705328', 1)],
- [('13497630', 1)],
- [('13497630', 1)]]
+ [('32587939', 1)],
+ [('32587939', 1)],
+ [('33409100', 1), ('33409100', 1)],
+ [('641786', 1)],
+ [('22080671', 1)]]
 ```
 
 ### Running the Deep Memory Training <a href="#running-the-deep-memory-training" id="running-the-deep-memory-training"></a>
@@ -200,27 +200,23 @@ validation_claims, validation_relevances = preprocess_scifact(claims_dataset, da
 )
 </code></pre>
 
-We observe that the recall has improved by p to 30%, depending on the `k` value.
-
-```python
-recalls
-```
+We observe that the recall has improved by p to 16%, depending on the `k` value.
 
 ```
----- Evaluating without model ---- 
-Recall@1:	  29.5%
-Recall@3:	  45.0%
-Recall@5:	  51.8%
-Recall@10:	  58.1%
-Recall@50:	  77.4%
-Recall@100:	  84.9%
----- Evaluating with model ---- 
-Recall@1:	  55.1%
-Recall@3:	  68.2%
+---- Evaluating without Deep Memory ---- 
+Recall@1:	  44.2%
+Recall@3:	  56.9%
+Recall@5:	  61.3%
+Recall@10:	  67.3%
+Recall@50:	  77.2%
+Recall@100:	  79.9%
+---- Evaluating with Deep Memory ---- 
+Recall@1:	  60.4%
+Recall@3:	  67.6%
 Recall@5:	  71.7%
-Recall@10:	  77.9%
-Recall@50:	  90.1%
-Recall@100:	  92.6%
+Recall@10:	  75.4%
+Recall@50:	  79.1%
+Recall@100:	  80.2%
 ```
 
 ### Using Deep Memory in your Application <a href="#using-deep-memory-in-your-application" id="using-deep-memory-in-your-application"></a>
