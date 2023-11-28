@@ -6,7 +6,7 @@ description: Migrating datasets to the Tensor Database
 
 ## How to migrate existing Deep Lake datasets to the Tensor Database
 
-Datasets are created in the Tensor Database by specifying the `dataset_path = "hub://<org_id>/<dataset_name>"` and `runtime = {"tensor_db": True})` during dataset creation. If datasets are currently stored locally, in your could, or in non-database Activeloop storage, they can be migrated to the Tensor Database using:
+Datasets are created in the Tensor Database by specifying the `dest = "hub://<org_id>/<dataset_name>"` and `runtime = {"tensor_db": True})` during dataset creation. If datasets are currently stored locally, in your cloud, or in non-database Activeloop storage, they can be migrated to the Tensor Database using:
 
 <pre class="language-python"><code class="lang-python"><strong>import deeplake
 </strong><strong>
