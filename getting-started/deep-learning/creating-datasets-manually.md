@@ -117,6 +117,7 @@ If your source data conforms to one of the formats below, you can ingest them di
 * [YOLO](https://docs.deeplake.ai/en/latest/deeplake.html#deeplake.ingest\_yolo)
 * [COCO](https://docs.deeplake.ai/en/latest/deeplake.html#deeplake.ingest\_coco)
 * Classifications
+* [Dataframe](https://docs.deeplake.ai/en/latest/deeplake.html#deeplake.ingest\_dataframe)
 
 For example, the above animals dataset can be converted to Deep Lake format using:
 

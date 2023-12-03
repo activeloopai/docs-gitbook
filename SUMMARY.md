@@ -32,8 +32,6 @@
 
 ## 📚 EXAMPLE CODE
 
-***
-
 * [Getting Started](getting-started/README.md)
   * [Vector Store](getting-started/vector-store/README.md)
     * [Step 1: Hello World](getting-started/vector-store/step-1-hello-world.md)
