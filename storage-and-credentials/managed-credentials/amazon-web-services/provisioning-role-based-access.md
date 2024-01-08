@@ -72,17 +72,12 @@ The most secure method for connecting data from your AWS account to Deep Lake is
             "Sid": "AllowAssumeRoleFromActiveloopSaaS",
             "Effect": "Allow",
             "Principal": {
-                 "AWS": [
-                     "arn:aws:iam::574987031486:role/activeloop_backend_dev",
-                     "arn:aws:iam::574987031486:role/activeloop_backend",
-                     "arn:aws:iam::597713067985:role/activeloop_backend"
-                 ]
+                 "AWS": "arn:aws:iam::597713067985:role/activeloop_backend"
         },
         "Action": "sts:AssumeRole"
       }
    ]
 }
-
 ```
 
 5\. From the provided policy list, select the previously created policy from Step 1 and click `Next`

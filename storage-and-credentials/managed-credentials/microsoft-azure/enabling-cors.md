@@ -20,10 +20,8 @@ Cross-Origin Resource Sharing (CORS) is typically enabled by default in Azure. I
 
 4\. Add the following items to the permissions.
 
-<figure><img src="../../../.gitbook/assets/Screen Shot 2023-06-21 at 9.45.00 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screen Shot 2023-06-21 at 9.45.00 AM edited.png" alt=""><figcaption></figcaption></figure>
 
-| Allowed origins                               | Allowed methods | Allowed headers |
-| --------------------------------------------- | --------------- | --------------- |
-| https://app.activeloop.ai                     | GET, HEAD       | \*              |
-| <p><br>https://app-dev.activeloop.dev<br></p> | GET, HEAD       | \*              |
-| https://app-staging.activeloop.dev            | GET             | \*              |
+| Allowed origins           | Allowed methods | Allowed headers |
+| ------------------------- | --------------- | --------------- |
+| https://app.activeloop.ai | GET, HEAD       | \*              |
