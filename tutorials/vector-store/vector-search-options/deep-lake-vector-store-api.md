@@ -72,7 +72,7 @@ Before college the two main things I worked on, outside of school, were writing 
 The first programs I tried writing were on the IBM 1401 that our school district used for what was then called "data processing." This was in 9th grade, so I was 13 or 14. The school district's 1401 happened to be in the basement of our junior high school, and my friend Rich Draves and I got permission to use it. It was like a mini Bond villain's lair down there, with all these alien-looking machines — CPU, disk drives, printer, card reader — sitting up on a raised floor under bright fluorescent lights.
 ```
 
-#### Hybrid Search Using UDFs
+#### Filter Search Using UDFs
 
 Vector search can be combined with other search logic for performing more advanced queries. Let's define a function compatible with [deeplake.filter](../../../getting-started/deep-learning/dataset-filtering.md) for filtering data before the vector search. The function below will filter samples that contain the word `"program"` in the `text` tensor.
 
@@ -107,7 +107,7 @@ all(["program" in result for result in search_results_filter["text"]])
 UDFs are only supported with query execution using the Python engine, so in the search above, `exec_option = "python"` should be specified.
 {% endhint %}
 
-#### Hybrid Search Using Metadata Filters
+#### Filter Search Using Metadata Filters
 
 Instead of using UDFs, a filter can be specified using dictionary syntax. For json tensors, the syntax is `filter = {"tensor_name": {"key": "value"}}`. For text tensors, it is `filter = {"tensor": "value"}`. In all cases, an exact match is performed.
 
@@ -117,7 +117,7 @@ search_results_filter = vector_store.search(embedding_data = prompt,
                                             filter = {"metadata": {"source": "paul_graham_essay.txt"}})
 ```
 
-#### Hybrid Search using TQL Vector Search
+#### Filter Search using TQL
 
 Deep Lake offers advanced search that executes queries with higher performance in C++, and offers querying using Deep Lake's [Tensor Query Language (TQL)](../../../performance-features/querying-datasets/).&#x20;
 
