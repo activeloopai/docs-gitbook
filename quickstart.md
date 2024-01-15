@@ -12,7 +12,7 @@ description: A jump-start guide to using Deep Lake for Vector Search.
 
 ### Installing Deep Lake
 
-Deep Lake can be installed using pip. **By default, Deep Lake does not install dependencies for the compute engine, google-cloud, and other features.** [**Details on all installation options are available here**](https://docs.deeplake.ai/en/latest/Installation.html)**.** This quickstart also requires OpenAI.
+Deep Lake can be installed using pip. **By default, Deep Lake does not install dependencies for google-cloud, video support, and other features.** [**Details on all installation options are available here**](https://docs.deeplake.ai/en/latest/Installation.html)**.** This quickstart also requires OpenAI.
 
 ```bash
 !pip3 install deeplake
