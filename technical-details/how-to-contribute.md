@@ -12,7 +12,7 @@ description: >-
 
 ### Providing Feedback
 
-We love feedback! Please [join our Slack Community ](https://join.slack.com/t/hubdb/shared\_invite/zt-ivhsj8sz-GWv9c5FLBDVw8vn\~sxRKqQ)or [raise an issue in Github](https://github.com/activeloopai/Hub/issues).
+We love feedback! Please [join our Slack Community ](http://slack.activeloop.ai/)or [raise an issue in Github](https://github.com/activeloopai/Hub/issues).
 
 ### Getting Started With Development
 

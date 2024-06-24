@@ -10,7 +10,7 @@ description: Restoring Deep Lake datasets that may be corrupted.
 
 ### How to Use Version Control to Retrieve Data
 
-When manipulating Deep Lake datasets, it is recommended to commit periodically in order to create snapshots of the dataset that can be accessed later. This can be done automatically when [creating datasets with `deeplake.compute`](creating-datasets-at-scale.md), or manually using [our version control API.](../../getting-started/deep-learning/dataset-version-control.md)
+When manipulating Deep Lake datasets, it is recommended to commit periodically in order to create snapshots of the dataset that can be accessed later. This can be done automatically when [creating datasets with `deeplake.compute`](creating-datasets-at-scale.md), or manually using [our version control API.](../../examples/dl/guide/dataset-version-control.md)
 
 If a dataset becomes corrupted, when loading the dataset, you may see an error like:
 

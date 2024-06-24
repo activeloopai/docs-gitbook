@@ -7,7 +7,7 @@ description: Creating large Deep Lake datasets with high performance and reliabi
 ## How to create Deep Lake datasets at scale
 
 {% hint style="info" %}
-This workflow assumes the reader has experience [uploading datasets using Deep Lake's distributed framework `deeplake.compute`](../../getting-started/deep-learning/parallel-computing.md).
+This workflow assumes the reader has experience [uploading datasets using Deep Lake's distributed framework `deeplake.compute`](../../examples/dl/guide/parallel-computing.md).
 {% endhint %}
 
 ### **When creating large Deep Lake datasets, it is recommended to:**
@@ -67,7 +67,7 @@ coco = COCO(local_ann_path)
 category_info = coco.loadCats(coco.getCatIds())
 ```
 
-Next, let's create an empty Deep Lake dataset at the desired path and connect it to the Deep Lake backend. We also add managed credentials for accessing linked data. In this case, the managed credentials for accessing the dataset are the same as those for accessing the linked data, but that's not a general requirement. [More details on managed credentials are available here](../../storage-and-credentials/managed-credentials/).&#x20;
+Next, let's create an empty Deep Lake dataset at the desired path and connect it to the Deep Lake backend. We also add managed credentials for accessing linked data. In this case, the managed credentials for accessing the dataset are the same as those for accessing the linked data, but that's not a general requirement. [More details on managed credentials are available here](../../setup/storage-and-creds/managed-credentials/).&#x20;
 
 ```python
 ds = deeplake.empty('s3://{}/coco-train'.format(deeplake_bucket), creds = creds, overwrite = True)

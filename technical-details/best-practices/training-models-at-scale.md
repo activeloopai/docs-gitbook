@@ -6,7 +6,7 @@ description: Train models at scale using Deep Lake
 
 ## How to optimize Deep Lake for training models at scale
 
-There are several Deep Lake related tuning parameters that affect the speed of Deep Lake [OSS](../../getting-started/deep-learning/connecting-to-ml-frameworks.md) and [Performant](../../performance-features/performant-dataloader.md) dataloaders. The plot below shows performance of the Deep Lake dataloaders under different scenarios, and it is discussed in detail below.
+There are several Deep Lake related tuning parameters that affect the speed of Deep Lake [OSS](../../examples/dl/guide/connecting-to-ml-frameworks.md) and [Performant](../../examples/dl/dataloaders.md) dataloaders. The plot below shows performance of the Deep Lake dataloaders under different scenarios, and it is discussed in detail below.
 
 <div align="center">
 
