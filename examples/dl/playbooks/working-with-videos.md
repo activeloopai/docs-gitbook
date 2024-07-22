@@ -73,7 +73,7 @@ See a complete example for this section in [this notebook](https://colab.researc
 Annotations like bounding boxes can be added and visualized in Deep Lake along with the video samples. We use tensors of htype `sequence[bbox]` for this purpose. Every sample in a `sequence[bbox]` tensor will be a sequence of bounding boxes which represents the annotations for the corresponding video sample in the `video` tensor.
 
 {% hint style="info" %}
-Learn more about sequences [here](broken-reference).
+Learn more about sequences [here](../tutorials/creating-datasets/creating-datasets-with-sequences.md).
 {% endhint %}
 
 ```python
