@@ -136,7 +136,7 @@ The most secure method for connecting data from your AWS account to Deep Lake is
 
 ```
 
-### Step 4: Enter the created AWS Role ARN (Step 2) into the Activeloop UI
+### Step 4: Enter the created AWS Role ARN (Step 2) into the Activeloop App
 
 See the first video in the link below:
 
