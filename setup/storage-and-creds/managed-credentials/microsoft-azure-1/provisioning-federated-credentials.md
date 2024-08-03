@@ -12,7 +12,23 @@ The most secure method for connecting data from your Google Cloud Storage to Dee
 
 **1. If you already have a service account, skip to Step 2**
 
-2\.
+2\. Navigate to `IAM & Admin` -> `Service Accounts` -> `CREATE SERVICE ACCOUNT`
+
+<figure><img src="../../../../.gitbook/assets/gcs_service_accounts.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../../.gitbook/assets/gcs_service_account_create.png" alt=""><figcaption></figcaption></figure>
+
+3\. Enter the service account `id`, and optional `name` and `description`. Make sure to copy the email address and and click on `CREATE AND CONTINUE`.
+
+<figure><img src="../../../../.gitbook/assets/gcs_service_account_details.png" alt=""><figcaption></figcaption></figure>
+
+4\. Click `CONTINUE` without entering any information.
+
+<figure><img src="../../../../.gitbook/assets/gcs_service_account_grant.png" alt=""><figcaption></figcaption></figure>
+
+5\. Enter `activeloop-platform@activeloop-saas-iam.iam.gserviceaccount.com` in the `Service account users role` and click `DONE`.
+
+<figure><img src="../../../../.gitbook/assets/gcs_service_account_done.png" alt=""><figcaption></figcaption></figure>
 
 ### Step 2: Grant Access to the bucket using a Service Account Principal
 
