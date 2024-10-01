@@ -12,11 +12,11 @@ The parameters of the HSNW index can be tuned using the `index_params` shown bel
 
 ```python
 vectorstore = VectorStore(path, 
-                          index_params = {"threshold": <DEFAULT_100k>,
-                                          "distance_metric":<DEFAULT_COS>,
+                          index_params = {"threshold": -1,
+                                          "distance_metric":"COS",
                                           "additional_params": {
-                                              "efConstruction": <DEFAULT_200>,
-                                              "M": <DEFAULT_16>}})
+                                              "efConstruction": 600,
+                                              "M": 32}})
 ```
 
 Further information about the impact of the index parameters [can be found here](https://towardsdatascience.com/similarity-search-part-4-hierarchical-navigable-small-world-hnsw-2aad4fe87d37).
