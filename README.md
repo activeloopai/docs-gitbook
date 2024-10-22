@@ -21,7 +21,7 @@ layout:
 
 
 
-> #### Please note this is the documentation for Deep Lake version 3.9.16 and  earlier.  For Deep Lake 4.0.0 and above, please use the following link. We will be working on transitioning the documentation soon as we work to update all the features.
+> #### Please note this is the documentation for Deep Lake version 3.9.16 and  earlier.  For Deep Lake 4.0.0 and above, please use [the following link](https://docs.deeplake.ai/). We will be working on transitioning the documentation very soon - stay tuned!
 
 #### Deep Lake as a Data Lake For Deep Learning
 
