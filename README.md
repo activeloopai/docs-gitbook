@@ -19,6 +19,10 @@ layout:
 
 ### Use Cases for Deep Lake
 
+
+
+> #### Please note this is the documentation for Deep Lake version 3.9.16 and  earlier.  For Deep Lake 4.0.0 and above, please use the following link. We will be working on transitioning the documentation soon as we work to update all the features.
+
 #### Deep Lake as a Data Lake For Deep Learning
 
 * Store and organize unstructured data (images, audios, nifti, videos, text, metadata, and more) in a versioned data format optimized for Deep Learning performance.
