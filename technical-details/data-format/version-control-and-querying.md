@@ -18,7 +18,7 @@ This logical approach was chosen in order to preserve data lineage. Otherwise, i
 
 An example workflow using version control and queries is shown below.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Version Control HEAD Commit
 

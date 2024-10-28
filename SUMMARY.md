@@ -12,6 +12,7 @@
   * [Storage Options](setup/storage-and-creds/storage-options.md)
   * [Setting up Deep Lake in Your Cloud](setup/storage-and-creds/managed-credentials/README.md)
     * [Microsoft Azure](setup/storage-and-creds/managed-credentials/microsoft-azure/README.md)
+      * [Configure Azure SSO on Activeloop](setup/storage-and-creds/managed-credentials/microsoft-azure/configure-azure-sso-on-activeloop.md)
       * [Provisioning Federated Credentials](setup/storage-and-creds/managed-credentials/microsoft-azure/provisioning-federated-credentials.md)
       * [Enabling CORS](setup/storage-and-creds/managed-credentials/microsoft-azure/enabling-cors.md)
     * [Google Cloud](setup/storage-and-creds/managed-credentials/google-cloud/README.md)
