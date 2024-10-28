@@ -13,3 +13,7 @@ description: Azure-specific information for connecting data to Deep Lake
 {% content-ref url="enabling-cors.md" %}
 [enabling-cors.md](enabling-cors.md)
 {% endcontent-ref %}
+
+{% content-ref url="configure-azure-sso-on-activeloop.md" %}
+[configure-azure-sso-on-activeloop.md](configure-azure-sso-on-activeloop.md)
+{% endcontent-ref %}
