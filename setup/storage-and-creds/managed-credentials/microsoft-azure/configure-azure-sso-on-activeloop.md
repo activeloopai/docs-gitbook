@@ -1,5 +1,5 @@
 ---
-description: Enabling Azure SSO on Activelo
+description: Enabling Azure SSO on Activeloop
 ---
 
 # Configure Azure SSO on Activeloop
